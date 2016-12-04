@@ -2,6 +2,10 @@
  * ScratchX extension utilities
  *
  * yokobond <koji.yokokawa@yengawa.com>
+ *
+ *   open
+ *   <a href="http://scratchx.org/?url=http://yokobond.github.io/scratchx-utils/utils.js">Open Scratchx with
+ Utils Blocks</a>
  */
 
 (function (ext) {
@@ -10,11 +14,15 @@
     return str.match(regexp);
   };
 
+  ext.regexpTest = function (str, regexp) {
+    return new RegExp(regexp).test(str);
+  };
+
   // Block and block menu descriptions
   var descriptor = {
     blocks: [
       // Block type, block name, function name
-      ['b', '%s match %s', 'match', 'string', 'regexp']
+      ['b', '%s test regexp %s', 'regexpTest', 'string', 'regexp']
     ],
     menus: {
     },
